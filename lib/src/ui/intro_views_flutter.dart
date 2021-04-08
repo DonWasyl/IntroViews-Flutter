@@ -139,8 +139,7 @@ class IntroViewsFlutter extends StatefulWidget {
 ///
 /// It extends the [TickerProviderStateMixin] as it is used for
 /// animation control (vsync).
-class _IntroViewsFlutterState extends State<IntroViewsFlutter>
-    with TickerProviderStateMixin {
+class _IntroViewsFlutterState extends State<IntroViewsFlutter> with TickerProviderStateMixin {
   /// Stream controller is used to get all the updates when user
   /// slides across screen.
   late StreamController<SlideUpdate> slideUpdateStream;
@@ -168,8 +167,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
     // Stream Controller initialization
     slideUpdateStream = StreamController<SlideUpdate>();
     // listening to updates of stream controller
-    slideUpdateStreamListener =
-        slideUpdateStream.stream.listen((SlideUpdate event) {
+    slideUpdateStreamListener = slideUpdateStream.stream.listen((SlideUpdate event) {
       // setState is used to change the values dynamically
       setState(() {
         // if the user is dragging then
@@ -269,13 +267,15 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter>
                 percentVisible: slidePercent,
                 columnMainAxisAlignment: widget.columnMainAxisAlignment),
           ),
-          PagerIndicator(
-            // bottom page indicator
-            viewModel: PagerIndicatorViewModel(
-              pages,
-              activePageIndex,
-              slideDirection,
-              slidePercent,
+          SafeArea(
+            child: PagerIndicator(
+              // bottom page indicator
+              viewModel: PagerIndicatorViewModel(
+                pages,
+                activePageIndex,
+                slideDirection,
+                slidePercent,
+              ),
             ),
           ),
           PageIndicatorButtons(
