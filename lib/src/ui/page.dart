@@ -136,7 +136,7 @@ class _BodyPageTransform extends StatelessWidget {
           Matrix4.translationValues(0.0, 30.0 * (1 - percentVisible), 0.0),
       child: Padding(
         padding: EdgeInsets.only(
-          bottom: 75.0 + MediaQuery.of(context).padding.bottom,
+          bottom: 100.0 + MediaQuery.of(context).padding.bottom,
           left: 10.0,
           right: 10.0,
         ),
