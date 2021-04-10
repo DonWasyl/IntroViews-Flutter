@@ -21,11 +21,11 @@ class PageBubble extends StatelessWidget {
       height: 65.0,
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(0),
           child: Container(
             // this method returns in between values according to active percent
-            width: lerpDouble(20.0, 45.0, viewModel.activePercent),
-            height: lerpDouble(20.0, 45.0, viewModel.activePercent),
+            width: lerpDouble(20.0, 40.0, viewModel.activePercent),
+            height: lerpDouble(20.0, 40.0, viewModel.activePercent),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               // alpha is used to create fade effect for background color

@@ -58,14 +58,14 @@ class Page extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 4,
+          flex: 3,
           child: _ImagePageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
           ),
         ),
         Flexible(
-          flex: 2,
+          flex: 3,
           child: _BodyPageTransform(
             percentVisible: percentVisible,
             pageViewModel: pageViewModel,
@@ -92,8 +92,7 @@ class Page extends StatelessWidget {
             mainAxisAlignment: columnMainAxisAlignment,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              Expanded(
-                flex: 2,
+              Flexible(
                 child: SafeArea(
                   child: _TitlePageTransform(
                     percentVisible: percentVisible,
@@ -102,10 +101,11 @@ class Page extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 4,
-                child: _BodyPageTransform(
-                  percentVisible: percentVisible,
-                  pageViewModel: pageViewModel,
+                child: SafeArea(
+                  child: _BodyPageTransform(
+                    percentVisible: percentVisible,
+                    pageViewModel: pageViewModel,
+                  ),
                 ),
               ),
             ],
@@ -136,7 +136,7 @@ class _BodyPageTransform extends StatelessWidget {
           Matrix4.translationValues(0.0, 30.0 * (1 - percentVisible), 0.0),
       child: Padding(
         padding: EdgeInsets.only(
-          bottom: 100.0 + MediaQuery.of(context).padding.bottom,
+          bottom: 75.0 + MediaQuery.of(context).padding.bottom,
           left: 10.0,
           right: 10.0,
         ),

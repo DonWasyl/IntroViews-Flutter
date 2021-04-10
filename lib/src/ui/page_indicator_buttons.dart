@@ -106,6 +106,7 @@ class PageIndicatorButtons extends StatelessWidget {
     this.showNextButton = true,
     this.showBackButton = true,
     required this.backText,
+    this.buttonsTextStyle,
   }) : super(key: key);
 
   final int activePageIndex;
@@ -126,6 +127,7 @@ class PageIndicatorButtons extends StatelessWidget {
   final Widget nextText;
   final Widget backText;
   final TextStyle textStyle;
+  final TextStyle? buttonsTextStyle;
 
   final bool doneButtonPersist;
 
@@ -204,7 +206,7 @@ class PageIndicatorButtons extends StatelessWidget {
       bottom: 0.0,
       child: SafeArea(
         child: DefaultTextStyle(
-          style: textStyle,
+          style: buttonsTextStyle ?? textStyle,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,

@@ -15,6 +15,7 @@ class PageViewModel {
     this.textStyle,
     this.titleTextStyle = const TextStyle(color: Colors.white, fontSize: 50.0),
     this.bodyTextStyle = const TextStyle(color: Colors.white, fontSize: 24.0),
+    this.buttonsTextStyle,
   });
 
   /// Page background color.
@@ -70,6 +71,8 @@ class PageViewModel {
   ///
   /// Defaults to `TextStyle(color: Colors.white, fontSize: 24.0)`.
   final TextStyle bodyTextStyle;
+
+  final TextStyle? buttonsTextStyle;
 
   /// Main widget.
   ///

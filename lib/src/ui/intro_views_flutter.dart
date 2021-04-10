@@ -283,6 +283,7 @@ class _IntroViewsFlutterState extends State<IntroViewsFlutter> with TickerProvid
             textStyle: textStyle,
             activePageIndex: activePageIndex,
             totalPages: pages.length,
+            buttonsTextStyle: pages[activePageIndex].buttonsTextStyle,
             onPressedDoneButton: widget.onTapDoneButton,
             // void callback to be executed after pressing done button
             slidePercent: slidePercent,
